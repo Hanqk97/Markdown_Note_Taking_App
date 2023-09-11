@@ -70,18 +70,6 @@ function App() {
     })
   }
 
-  function updateTag(id: string, label: string){
-    setTags(prevTags => {
-      return prevTags.map(tag => {
-        if(tag.id === id){
-          return {...tag, label}
-        }else{
-          return tag
-        }
-      })
-    })
-  }
-
   // Drop off the selected note id and return remain id
   function onDeleteNote(id: string) {
     setNotes(prevNotes => {
@@ -89,17 +77,11 @@ function App() {
     })
   }
 
-  function deleteTag (id : string) {
-    setTags(prevTags => {
-      return prevTags.filter(tag => tag.id !== id)
-    })
-  }
-
   return (
     // Give more margin
     <Container className="my-4">
       <Routes>
-        <Route path="/" element={<NoteList notes={noteWithTags} availableTags={tags} onUpdateTag={updateTag} onDeleteTag={deleteTag}/>} />
+        <Route path="/" element={<NoteList notes={noteWithTags} availableTags={tags} />} />
         <Route path="/new" element={<NewNote
           onSubmit={onCreateNote}
           onAddTag={addTag}

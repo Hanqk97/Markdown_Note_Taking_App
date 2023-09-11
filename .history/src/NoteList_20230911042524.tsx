@@ -123,10 +123,10 @@ function EditTagsModal({availableTags, handleClose, show, onUpdateTag, onDeleteT
                         {availableTags.map(tag => (
                             <Row key={tag.id}>
                                 <Col>
-                                    <Form.Control type="text" value={tag.label} onChange={e => onUpdateTag(tag.id, e.target.value)}/>
+                                    <Form.Control type="text" value={tag.label} />
                                 </Col>
                                 <Col xs="auto">
-                                    <Button onClick={() => onDeleteTag(tag.id)} variant="outline-danger">&times;</Button>
+                                    <Button variant="outline-danger">&times;</Button>
                                 </Col>
                             </Row>
                         ))}

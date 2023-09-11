@@ -99,7 +99,7 @@ function App() {
     // Give more margin
     <Container className="my-4">
       <Routes>
-        <Route path="/" element={<NoteList notes={noteWithTags} availableTags={tags} onUpdateTag={updateTag} onDeleteTag={deleteTag}/>} />
+        <Route path="/" element={<NoteList notes={noteWithTags} availableTags={tags} updateTag={updateTag} deleteTag={deleteTag}/>} />
         <Route path="/new" element={<NewNote
           onSubmit={onCreateNote}
           onAddTag={addTag}

@@ -5,10 +5,10 @@ import { useNote } from "./NoteLayout"
 import ReactMarkdown from "react-markdown"
 
 type NoteProps = {
-    onDelete: (id: string) => void
+    onDelete : (id : string) => void
 }
 
-export function Note({ onDelete }: NoteProps) {
+export function Note( { onDelete} : NoteProps) {
     const note = useNote()
     const navigate = useNavigate()
 
